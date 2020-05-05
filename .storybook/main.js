@@ -1,22 +1,25 @@
-// .storybook/main.js
 const fs = require('fs');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
-const OUTPUT_DIR = '../dist';
-// Stencil names the project entry the same as the project
-// Look for the file `dist/<your-project-name>.js` to find out what to insert here
+const OUTPUT_DIR = path.resolve(__dirname, '../dist');
 const PROJECT_NAME = 'storybook-stencil';
 
 module.exports = {
   stories: ['../src/**/*.stories.js'],
-  addons: ['@storybook/addon-notes/register'],
-  // Custom webpack config to tell Storybook where to find the compiled files from Stencil
+  addons: [
+    '@storybook/addon-notes/register',
+    '@storybook/addon-knobs/register',
+    '@storybook/addon-actions/register',
+  ],
   async webpackFinal(config) {
-    config.entry.push(path.join(__dirname, OUTPUT_DIR, `${PROJECT_NAME}.js`));
-    fs.readdirSync(path.join(__dirname, OUTPUT_DIR, 'collection/components')).map(file => {
-      jsFilePath = path.join(__dirname, OUTPUT_DIR, `collection/components/${file}/${file}.js`);
+    config.entry.push(path.join(OUTPUT_DIR, `${PROJECT_NAME}.js`));
+    fs.readdirSync(path.join(OUTPUT_DIR, 'collection/components')).map(file => {
+      jsFilePath = path.join(
+        OUTPUT_DIR,
+        `collection/components/${file}/${file}.js`
+      );
       try {
         if (fs.existsSync(jsFilePath)) {
           config.entry.push(jsFilePath);
@@ -25,9 +28,7 @@ module.exports = {
         console.error(err);
       }
 
-      // Add CSS
-      let cssFilePath = path.join(
-        __dirname,
+      cssFilePath = path.join(
         OUTPUT_DIR,
         `collection/components/${file}/${file}.css`
       );
@@ -40,18 +41,16 @@ module.exports = {
       }
     });
 
-    // Add all static files to Storybook
     config.plugins.push(
       new CopyPlugin([
         {
           from: '**/*',
           to: './',
-          context: 'dist',
+          context: OUTPUT_DIR,
         },
       ])
     );
 
-    // Write the files to disk and not to memory
     config.plugins.push(new WriteFilePlugin());
 
     return config;

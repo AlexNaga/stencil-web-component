@@ -20,6 +20,9 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TiqqeButton {
+        "color": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +31,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTiqqeButtonElement extends Components.TiqqeButton, HTMLStencilElement {
+    }
+    var HTMLTiqqeButtonElement: {
+        prototype: HTMLTiqqeButtonElement;
+        new (): HTMLTiqqeButtonElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "tiqqe-button": HTMLTiqqeButtonElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +57,12 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TiqqeButton {
+        "color"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "tiqqe-button": TiqqeButton;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +70,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "tiqqe-button": LocalJSX.TiqqeButton & JSXBase.HTMLAttributes<HTMLTiqqeButtonElement>;
         }
     }
 }
