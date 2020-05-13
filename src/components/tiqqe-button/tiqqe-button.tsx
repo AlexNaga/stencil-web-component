@@ -1,20 +1,19 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core'
 
 @Component({
   tag: 'tiqqe-button',
-  styleUrl: 'tiqqe-button.css',
-  shadow: true,
+  styleUrl: 'tiqqe-button.scss',
+  shadow: true
 })
-export class TiqqeButton {
-  @Prop() color: string;
-  // @Prop() color: ['red', 'green', blue'];
+
+export class ButtonComponent {
+  @Prop() color: 'plain' | 'primary' | 'secondary' | 'danger' = 'plain'
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
-    );
+      <button class={`${this.color}`}>
+        <slot />
+      </button>
+    )
   }
-
 }

@@ -6,31 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
     interface TiqqeButton {
-        "color": string;
+        "color": "plain" | "primary" | "secondary" | "danger";
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLTiqqeButtonElement extends Components.TiqqeButton, HTMLStencilElement {
     }
     var HTMLTiqqeButtonElement: {
@@ -38,30 +18,14 @@ declare global {
         new (): HTMLTiqqeButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
         "tiqqe-button": HTMLTiqqeButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface TiqqeButton {
-        "color"?: string;
+        "color"?: "plain" | "primary" | "secondary" | "danger";
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
         "tiqqe-button": TiqqeButton;
     }
 }
@@ -69,7 +33,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "tiqqe-button": LocalJSX.TiqqeButton & JSXBase.HTMLAttributes<HTMLTiqqeButtonElement>;
         }
     }
