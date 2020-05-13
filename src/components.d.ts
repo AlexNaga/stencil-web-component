@@ -9,7 +9,6 @@ export namespace Components {
     interface TiqqeButton {
         "color": "primary" | "secondary" | "danger" | "success";
         "label": string;
-        "value": any;
     }
 }
 declare global {
@@ -27,7 +26,6 @@ declare namespace LocalJSX {
     interface TiqqeButton {
         "color"?: "primary" | "secondary" | "danger" | "success";
         "label"?: string;
-        "value"?: any;
     }
     interface IntrinsicElements {
         "tiqqe-button": TiqqeButton;

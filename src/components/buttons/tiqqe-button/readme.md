@@ -11,7 +11,6 @@
 | -------- | --------- | ----------- | --------------------------------------------------- | ----------- |
 | `color`  | `color`   |             | `"danger" \| "primary" \| "secondary" \| "success"` | `undefined` |
 | `label`  | `label`   |             | `string`                                            | `undefined` |
-| `value`  | `value`   |             | `any`                                               | `undefined` |
 
 
 ----------------------------------------------
