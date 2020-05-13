@@ -5,8 +5,8 @@ module.exports = {
         'node': true
     },
     'extends': [
-        'eslint:recommended',
-        'plugin:@typescript-eslint/eslint-recommended'
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
     ],
     'globals': {
         'Atomics': 'readonly',
@@ -36,6 +36,6 @@ module.exports = {
         'semi': [
             'error',
             'always'
-        ]
-    }
+        ],
+    },
 };

@@ -1,6 +1,7 @@
 $default-primary-color: #448aff;
 $default-secondary-color: #ffb944;
 $default-danger-color: #f34a4a;
+$default-success-color: #3dd800;
 
 button {
   border: none;
@@ -28,5 +29,9 @@ button {
   &.danger {
     background-color: var(--app-danger-color, $default-danger-color);
     color: var(--app-danger-text-color, #ffffff);
+  }
+  &.success {
+    background-color: var(--app-success-color, $default-success-color);
+    color: var(--app-success-text-color, #ffffff);
   }
 }

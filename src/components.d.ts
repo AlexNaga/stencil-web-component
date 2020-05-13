@@ -7,7 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface TiqqeButton {
-        "color": "plain" | "primary" | "secondary" | "danger";
+        "color": "primary" | "secondary" | "danger" | "success";
+        "label": string;
+        "value": any;
     }
 }
 declare global {
@@ -23,7 +25,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface TiqqeButton {
-        "color"?: "plain" | "primary" | "secondary" | "danger";
+        "color"?: "primary" | "secondary" | "danger" | "success";
+        "label"?: string;
+        "value"?: any;
     }
     interface IntrinsicElements {
         "tiqqe-button": TiqqeButton;
