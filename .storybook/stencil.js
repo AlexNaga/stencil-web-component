@@ -27,7 +27,6 @@ const {
 
 // Fix for scoped package names
 const normalizedPkgName = kebabCase(name);
-const repoName = 'storybook-stencil-web-components';
 
 /**
  * Function to get the stencil resources
@@ -36,15 +35,15 @@ const getStencilResources = () => ({
   "components-css":
     process.env.NODE_ENV === "development"
       ? `${protocol}://${host}:${port}/${buildDir}/${normalizedPkgName}.css`
-      : `${repoName}/webcomponents/${buildDir}/${normalizedPkgName}.css`,
+      : `/webcomponents/${buildDir}/${normalizedPkgName}.css`,
   "component-js":
     process.env.NODE_ENV === "development"
       ? `${protocol}://${host}:${port}/${buildDir}/${normalizedPkgName}.js`
-      : `${repoName}/webcomponents/${buildDir}/${normalizedPkgName}.js`,
+      : `/webcomponents/${buildDir}/${normalizedPkgName}.js`,
   "component-js-module":
     process.env.NODE_ENV === "development"
       ? `${protocol}://${host}:${port}/${buildDir}/${normalizedPkgName}.esm.js`
-      : `${repoName}/webcomponents/${buildDir}/${normalizedPkgName}.esm.js`
+      : `/webcomponents/${buildDir}/${normalizedPkgName}.esm.js`
 });
 
 /**
