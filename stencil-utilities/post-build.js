@@ -56,8 +56,8 @@ async function updateStorybookAssets() {
   let iframeHtmlUpdated = iframeHtml.replace(
     /<\/head>/,
     `
-    <link href="/${repoName}/webcomponents/build/${pkg.name}.css" rel="stylesheet">
-    <script src="/${repoName}/webcomponents/build/${pkg.name}.js"></script>
+    <link href="/webcomponents/build/${pkg.name}.css" rel="stylesheet">
+    <script src="/webcomponents/build/${pkg.name}.js"></script>
     </head>
   `
   );
