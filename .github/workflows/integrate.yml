@@ -27,7 +27,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist
+          FOLDER: storybook-static
           CLEAN: true
 
       - name: Deploy Stencil 🚀
@@ -35,6 +35,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: www
-          TARGET_FOLDER: webcomponents
+          FOLDER: dist/storybook-stencil
+          TARGET_FOLDER: webcomponents/build
           CLEAN: true
