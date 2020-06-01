@@ -8,15 +8,15 @@ import { Component, Prop, h } from '@stencil/core';
 })
 
 export class ButtonComponent {
-    @Prop() label: string;
 
-    @Prop() color: 'primary' | 'secondary' | 'danger' | 'success';
+  @Prop() color: 'primary' | 'secondary' | 'danger' | 'success';
+  @Prop() label: string;
 
-    render() {
-      return (
-        <button class={this.color}>
-          <span>{this.label}</span>
-        </button>
-      );
-    }
+  render() {
+    return (
+      <button class={this.color}>
+        <span>{this.label}</span>
+      </button>
+    );
+  }
 }
