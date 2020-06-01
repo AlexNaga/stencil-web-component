@@ -42,7 +42,6 @@ async function writeStorybookOutputfile(name, data) {
  * DO NOT MODIFY THE FUNCTION DEFINITION
  */
 async function updateStorybookAssets() {
-  const repoName = 'storybook-stencil-web-components';
   const indexFilename = "index.html";
   const iframeFilename = "iframe.html";
   const indexHtml = await readStorybookOutputfile(indexFilename);
