@@ -1,0 +1,1 @@
+System.register(["./p-e3ed9582.system.js"],(function(){"use strict";var t,e;return{setters:[function(n){t=n.p;e=n.b}],execute:function(){t().then((function(t){return e([["p-a367c87c.system",[[1,"tiqqe-button",{color:[1],label:[1]}]]]],t)}))}}}));
