@@ -1,1 +1,1 @@
-System.register(["./p-e3ed9582.system.js"],(function(){"use strict";var e,t;return{setters:[function(n){e=n.p;t=n.b}],execute:function(){e().then((function(e){return t([["p-06a9ed5e.system",[[1,"tiqqe-button",{color:[1],label:[1]}]]]],e)}))}}}));
+System.register(["./p-e3ed9582.system.js"],(function(){"use strict";var t,e;return{setters:[function(n){t=n.p;e=n.b}],execute:function(){t().then((function(t){return e([["p-a367c87c.system",[[1,"tiqqe-button",{color:[1],label:[1]}]]]],t)}))}}}));
