@@ -16,7 +16,7 @@ const buttonColor = {
 export const regular = () => {
   // Storybook Knobs ------------------------------------------//
   const color = select('color', buttonColor, buttonColor.primary);
-  const label = text('button text', 'Button');
+  const label = text('button text', 'Click me');
   // --------------------------------------------------------- //
 
   return `

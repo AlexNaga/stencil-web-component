@@ -17,6 +17,11 @@ button {
   overflow-wrap: break-word;
 }
 
+button:active {
+  transition: background-color 0.15s ease-in-out;
+  background-color: darken($default-primary-color, -5%);
+}
+
 button {
   &.primary {
     background-color: var(--app-primary-color, $default-primary-color);
