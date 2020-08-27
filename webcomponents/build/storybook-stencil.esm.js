@@ -1,1 +1,0 @@
-import{p as o,b as e}from"./p-86ec5dc8.js";o().then(o=>e([["p-e5d16096",[[1,"tiqqe-button",{color:[1],label:[1]}]]]],o));
