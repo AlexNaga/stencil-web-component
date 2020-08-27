@@ -19,10 +19,11 @@ export const regular = () => {
   const label = text('button text', 'Button');
   // --------------------------------------------------------- //
 
+  console.log(label);
   return `
     <tiqqe-button
       color=${color}
-      label=${label}
+      label="${label}"
     />
   `;
 };
